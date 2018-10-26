@@ -10,11 +10,11 @@
         <div class="container">
             <div class="row">
                 <!-- Post Share -->
-                <div class="col-md-2 pl-0">      
+                <div class="col-lg-2 col-md-0 pl-0">      
                     {{- partial "single-partials/share.html" . -}}
                 </div>
                 <!-- Post -->                
-                <div class="col-md-10 flex-first flex-md-unordered">
+                <div class="col-lg-10 col-md-12 flex-first flex-md-unordered">
                     <div class="mainheading">
                         <!-- Post Title -->
                         <h1 class="posttitle">{{ .Title }}</h1> 
@@ -89,9 +89,7 @@
         </div>
         <!-- End Article
         ================================================== -->
-        {{ if .Params.comments }}
-            {{- partial "single-partials/comments.html" . -}}
-        {{ end }}
+        {{- partial "single-partials/comments.html" . -}}
     </div>
     {{- partial "_shared/alertbar.html" . -}}
 {{ end }}

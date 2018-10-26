@@ -2,8 +2,24 @@
 ================================================== -->
 <div class="container">
     <div id="comments" class="row justify-content-center mb-5">
-        <div class="col-md-8">              
-            {{ template "_internal/disqus.html" . }}               
+        <div class="col-lg-2 col-md-0">
+        </div>
+        <div class="col-lg-10 col-md-12">
+            {{ if and (ne .Site.Params.comment false) (ne .Params.comment false) }}
+            {{ with .Site.Params.disqusShortname }}
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = '{{ . }}';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            {{ end }}
+            {{ end }}
         </div>
     </div>
 </div>
