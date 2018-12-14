@@ -19,7 +19,17 @@
 <script>
     $(document).ready(function() {
 
-        quicklink();
+        var ql_options = { priority : true };
+
+        if ($('.PageNavigation a').length) {
+            ql_options['urls'] = $('.PageNavigation a').map(function(idx, item) { return $(item).attr('href');  }).toArray();
+            console.log(ql_options)
+            quicklink(ql_options);
+        } else if ($('.listrecent').length) {
+            ql_options['el'] = $('.listrecent')[0]
+            console.log(ql_options)
+            quicklink(ql_options);
+        }
 
       hljs.configure({tabReplace: '    '});
       $('.article-post pre code').each(function(i, block) {
