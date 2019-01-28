@@ -10,6 +10,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.6/typed.min.js"></script>
 
+<script src="{{"/js/sqdiagram.js" | urlize | relURL }}"></script>
 <script src="{{"/js/mediumish.js" | urlize | relURL }}"></script>
 
 <script src="/js/highlight.js"></script>
@@ -38,6 +39,9 @@
       $(".article-post p").has("img").css('text-align', "center");
       $(".article-post a").attr('target','_blank');
       $(".article-post table").addClass('table').addClass('table-bordered');
+
+      $(".sqdiagram").sequenceDiagram({theme: 'hand'});
+
       if (window.typedString) {
         var typed = new Typed('#currentStatus', {
           strings: window.typedString,
