@@ -27,7 +27,7 @@
                         {{ add .ReadingTime 3 }} mins read
                         {{ if .GitInfo }}
                             <i class="fas fa-code-branch git-commit-hash"></i>
-                            <a class="git-commit-hash-link" href="https://github.com/khanhicetea/.com/commit/{{.GitInfo.Hash}}" target="_blank">{{.GitInfo.AbbreviatedHash}}</a>
+                            <a class="git-commit-hash-link" href="https://github.com/khanhicetea/.com/blob/{{.GitInfo.Hash}}/content/{{.File.Path}}" target="_blank">{{.GitInfo.AbbreviatedHash}}</a>
                         {{ end }}
                     </div>
 
