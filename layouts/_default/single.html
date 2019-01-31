@@ -25,6 +25,10 @@
                         {{ dateFormat "Jan 2, 2006" .PublishDate }}
                         <i class="far fa-clock clock"></i>
                         {{ add .ReadingTime 3 }} mins read
+                        {{ if .GitInfo }}
+                            <i class="fas fa-code-branch git-commit-hash"></i>
+                            <a class="git-commit-hash-link" href="https://github.com/khanhicetea/.com/commit/{{.GitInfo.Hash}}" target="_blank">{{.GitInfo.AbbreviatedHash}}</a>
+                        {{ end }}
                     </div>
 
                     <!-- Post Featured Image -->

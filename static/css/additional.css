@@ -23,6 +23,12 @@ body, .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
 .clock{
     margin-left: 25px;
 }
+.git-commit-hash-link {
+    color:black;
+}
+.git-commit-hash{
+    margin-left: 25px;
+}
 .maxthumb > a > img {
     border-radius: .25rem .25rem 0 0;
 }
