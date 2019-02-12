@@ -15,22 +15,24 @@
 
 <script src="/js/highlight.js"></script>
 <script src="/js/polyfill.min.js"></script>
-<script src="/js/quicklink.umd.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/instantclick/3.0.1/instantclick.min.js"></script>
 
 <script>
     $(document).ready(function() {
 
-        var ql_options = { priority : true };
+      InstantClick.init();
 
-        if ($('.PageNavigation a').length) {
-            ql_options['urls'] = $('.PageNavigation a').map(function(idx, item) { return $(item).attr('href');  }).toArray();
-            console.log(ql_options)
-            quicklink(ql_options);
-        } else if ($('.listrecent').length) {
-            ql_options['el'] = $('.listrecent')[0]
-            console.log(ql_options)
-            quicklink(ql_options);
-        }
+      //var ql_options = { priority : true };
+      // if ($('.PageNavigation a').length) {
+      //     ql_options['urls'] = $('.PageNavigation a').map(function(idx, item) { return $(item).attr('href');  }).toArray();
+      //     console.log(ql_options)
+      //     quicklink(ql_options);
+      // } else if ($('.listrecent').length) {
+      //     ql_options['el'] = $('.listrecent')[0]
+      //     console.log(ql_options)
+      //     quicklink(ql_options);
+      // }
 
       hljs.configure({tabReplace: '    '});
       $('.article-post pre code').each(function(i, block) {
